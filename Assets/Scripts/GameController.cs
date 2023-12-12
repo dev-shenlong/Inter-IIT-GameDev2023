@@ -4,45 +4,36 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    Vector2 startpos;
-    SpriteRenderer sprite;
-    Rigidbody2D rb;
-
-
-
-    private void Start()
-    {
-        startpos = transform.position;
-        sprite = GetComponent<SpriteRenderer>();
-        rb = GetComponent<Rigidbody2D>();
-
-    }
+    [SerializeField] private float damage;
+    [SerializeField] private Health PlayerHealth;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Traps"))
+        // Check if the collision object is not null and has the "Traps" tag
+        if (collision != null && collision.CompareTag("Traps"))
         {
-            Die();
+            PlayerHealth.TakeDamage(damage);
         }
     }
-
-    void Die()
-    {
-        StartCoroutine(Respawn(1f));
-    }
-
-   IEnumerator Respawn(float duration)
-    {
-        rb.simulated = false;
-        rb.velocity = new Vector2(0, 0);
-        sprite.enabled = false;
-        yield return new WaitForSeconds(duration);
-        transform.position = startpos;
-        sprite.enabled = true;
-        rb.simulated = true;
-    }
-
-
-
-
 }
+
+    //void Die()
+    //{
+        
+    //}
+
+   //IEnumerator Respawn(float duration)
+   // {
+   //     rb.simulated = false;
+   //     rb.velocity = new Vector2(0, 0);
+   //     sprite.enabled = false;
+   //     yield return new WaitForSeconds(duration);
+   //     transform.position = startpos;
+   //     sprite.enabled = true;
+   //     rb.simulated = true;
+   // }
+
+
+
+
+
