@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fe0c2efb08b271975a2631618d759538
+guid: dd93b75339430364d8adac7598b62f5b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,112 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Player_jump-side_0
-      rect:
-        serializedVersion: 2
-        x: 10
-        y: 45
-        width: 60
-        height: 80
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d41412d77199a9975809d0c55e5d9aab
-      internalID: 1976601058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump-side_2
-      rect:
-        serializedVersion: 2
-        x: 110
-        y: 25
-        width: 60
-        height: 100
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 251e1d7cebbecb2fe9a687e39a905a19
-      internalID: -1554234373
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump-side_4
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 25
-        width: 60
-        height: 80
-      alignment: 9
-      pivot: {x: 0.5, y: 0.625}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1fb194eb085c0a38926c44b6f9971e0
-      internalID: 1139826865
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump-side_5
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 25
-        width: 80
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 77ea7176e9e638f34939c08ea8f766a5
-      internalID: 1099694411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump-side_6
-      rect:
-        serializedVersion: 2
-        x: 410
-        y: 25
-        width: 60
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7a608d08cbf7b04aa9ec1182dfe72e14
-      internalID: -617077264
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -219,22 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Player_jump-side_0: 1976601058
-      Player_jump-side_1: -1872213674
-      Player_jump-side_10: -1703310087
-      Player_jump-side_11: 163587666
-      Player_jump-side_12: -506058396
-      Player_jump-side_13: -1885262453
-      Player_jump-side_14: -1136092775
-      Player_jump-side_2: -1554234373
-      Player_jump-side_3: -455098099
-      Player_jump-side_4: 1139826865
-      Player_jump-side_5: 1099694411
-      Player_jump-side_6: -617077264
-      Player_jump-side_7: -1053812439
-      Player_jump-side_8: 633931602
-      Player_jump-side_9: 1883682807
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

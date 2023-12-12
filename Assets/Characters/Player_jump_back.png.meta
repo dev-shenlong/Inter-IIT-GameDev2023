@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4ea151a2d0f7e9ae1bc27176c5059be2
+guid: 819abcbab80412d4ebea32a26700422d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,133 +103,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Player_jump_back_0
-      rect:
-        serializedVersion: 2
-        x: 12
-        y: 53
-        width: 60
-        height: 80
-      alignment: 9
-      pivot: {x: 0.5, y: 0.375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6cab59ae4b3e399fb869a7ebfce4a84
-      internalID: -255232054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump_back_2
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 33
-        width: 60
-        height: 100
-      alignment: 9
-      pivot: {x: 0.5, y: 0.7}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82c349bec8a8f4a9c9bbec45729cda29
-      internalID: -832159697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump_back_4
-      rect:
-        serializedVersion: 2
-        x: 212
-        y: 33
-        width: 60
-        height: 80
-      alignment: 9
-      pivot: {x: 0.5, y: 0.625}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9cd990da29d83eae0a8c1f613d5c676d
-      internalID: -1761769140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump_back_5
-      rect:
-        serializedVersion: 2
-        x: 302
-        y: 33
-        width: 80
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10de07730697901c9a91129530719193
-      internalID: 1734448035
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump_back_6
-      rect:
-        serializedVersion: 2
-        x: 412
-        y: 33
-        width: 60
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4cde1b98be749f30caaf442582e5413a
-      internalID: 927888155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Player_jump_back_7
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 53
-        width: 5
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3485dc5ae0592cc60a59029127d64c81
-      internalID: 1058229379
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -240,22 +114,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Player_jump_back_0: -255232054
-      Player_jump_back_1: -1139482417
-      Player_jump_back_10: -1853954935
-      Player_jump_back_11: -1936038403
-      Player_jump_back_12: -1296175319
-      Player_jump_back_13: 1308765707
-      Player_jump_back_14: 34620117
-      Player_jump_back_2: -832159697
-      Player_jump_back_3: -916528031
-      Player_jump_back_4: -1761769140
-      Player_jump_back_5: 1734448035
-      Player_jump_back_6: 927888155
-      Player_jump_back_7: 1058229379
-      Player_jump_back_8: 1392353228
-      Player_jump_back_9: 1731213895
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
