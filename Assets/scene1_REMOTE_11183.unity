@@ -361,10 +361,10 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: 17dd5a316c13ec943bf90c9ed68137aa, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!61 &487513296
 BoxCollider2D:
@@ -373,13 +373,13 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487513294}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0121484995, y: -0.033013344}
+  m_Offset: {x: -0.0121484995, y: -0.0030122995}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -390,7 +390,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8525201, y: 0.92410755}
+  m_Size: {x: 0.8525201, y: 0.98410964}
   m_EdgeRadius: 0
 --- !u!212 &487513297
 SpriteRenderer:
@@ -892,8 +892,8 @@ MonoBehaviour:
   m_LookaheadTime: 0.33
   m_LookaheadSmoothing: 0.21
   m_LookaheadIgnoreY: 1
-  m_XDamping: 0
-  m_YDamping: 0
+  m_XDamping: 1
+  m_YDamping: 1
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
