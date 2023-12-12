@@ -42,12 +42,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -103,7 +103,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Laser-Animation_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe1c574242c165847b7903e10167adef
+      internalID: 1799276268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_1
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e6f745225131a742a79e66e7a7fa273
+      internalID: -566939729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_2
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b9ae6f8c33c764a97d2113835be03c
+      internalID: 171251431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_3
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202ab47a1cb986044bbc232eb77d1bce
+      internalID: 468980692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_4
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa445c31c2810424fbc48d9de8a3ead3
+      internalID: -1727492613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_5
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2d1db9b7442d94ca0cbc1b7f36358f
+      internalID: 1833469592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_6
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940c257a5478cc448ba383366c21dca2
+      internalID: 317406126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_7
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 790b8ada700ca40429a4a1dbb1bbe327
+      internalID: -563510579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_8
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614ffa269ac56a04da6e310f9cf3c232
+      internalID: -270249241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_9
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 737dd4e0e66bcd2408b12570d6d0f080
+      internalID: 1788581248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_10
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de859dd63c334d4da2e9232dc59a366
+      internalID: 1824716909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_11
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3fbee5ccbe76334989b370fe6d6da36
+      internalID: 1403069387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_12
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1fa6e73f70f563468d1ee2ad228629f
+      internalID: -1917183841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_13
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36a796a7a320aea4cbd1c4cd9a0caf5b
+      internalID: 593189448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_14
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13646a915a450645a3dc0d6bfee6661
+      internalID: -86085663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_15
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62f955f2b5fb8eb4bb4c0ffa7554429e
+      internalID: 1416280277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_16
+      rect:
+        serializedVersion: 2
+        x: 1288
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bdb8db68a272745a2eb43e1adb9325
+      internalID: -2104538897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_17
+      rect:
+        serializedVersion: 2
+        x: 1368
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37227f99c022f214b9cb4929986c77da
+      internalID: 1388165437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_18
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ecccf4b7b47c24185f977741a2a297
+      internalID: -46897748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laser-Animation_19
+      rect:
+        serializedVersion: 2
+        x: 1528
+        y: 11
+        width: 64
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb8b3d7c939af84ab294273db94ae3b
+      internalID: 1076982526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +534,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Laser-Animation_0: 1799276268
+      Laser-Animation_1: -566939729
+      Laser-Animation_10: 1824716909
+      Laser-Animation_11: 1403069387
+      Laser-Animation_12: -1917183841
+      Laser-Animation_13: 593189448
+      Laser-Animation_14: -86085663
+      Laser-Animation_15: 1416280277
+      Laser-Animation_16: -2104538897
+      Laser-Animation_17: 1388165437
+      Laser-Animation_18: -46897748
+      Laser-Animation_19: 1076982526
+      Laser-Animation_2: 171251431
+      Laser-Animation_3: 468980692
+      Laser-Animation_4: -1727492613
+      Laser-Animation_5: 1833469592
+      Laser-Animation_6: 317406126
+      Laser-Animation_7: -563510579
+      Laser-Animation_8: -270249241
+      Laser-Animation_9: 1788581248
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
