@@ -3,13 +3,6 @@ using UnityEngine;
 
 namespace MyPlayerController
 {
-    /// <summary>
-    /// Hey!
-    /// Tarodev here. I built this controller as there was a severe lack of quality & free 2D controllers out there.
-    /// I have a premium version on Patreon, which has every feature you'd expect from a polished controller. Link: https://www.patreon.com/tarodev
-    /// You can play and compete for best times here: https://tarodev.itch.io/extended-ultimate-2d-controller
-    /// If you hve any questions or would like to brag about your score, come to discord: https://discord.gg/tarodev
-    /// </summary>
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
@@ -19,6 +12,8 @@ namespace MyPlayerController
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
+
+        public bool reverseGravity;
 
         #region Interface
 
@@ -67,7 +62,15 @@ namespace MyPlayerController
         }
 
         private void FixedUpdate()
-        {
+        {   
+            if (reverseGravity)
+            {
+                _rb.gravityScale = -1;
+            } 
+            else
+            {
+                _rb.gravityScale = 1;
+            }
             CheckCollisions();
 
             HandleJump();
@@ -90,8 +93,13 @@ namespace MyPlayerController
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
             bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
+            (groundHit, ceilingHit) = (ceilingHit, groundHit);
+
+            Debug.Log("gh : "+ groundHit);
+            Debug.Log("ch : "+ ceilingHit);
+
             // Hit a Ceiling
-            if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
+            if (ceilingHit) _frameVelocity.y = Mathf.Max(0, _frameVelocity.y);
 
             // Landed on the Ground
             if (!_grounded && groundHit)
@@ -180,15 +188,21 @@ namespace MyPlayerController
 
         private void HandleGravity()
         {
-            if (_grounded && _frameVelocity.y <= 0f)
+            if (reverseGravity)
             {
-                _frameVelocity.y = _stats.GroundingForce;
-            }
-            else
+                return;
+            } else
             {
-                var inAirGravity = _stats.FallAcceleration;
-                if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
-                _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+                if (_grounded && _frameVelocity.y <= 0f)
+                {
+                    _frameVelocity.y = _stats.GroundingForce;
+                }
+                else
+                {
+                    var inAirGravity = _stats.FallAcceleration;
+                    if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
+                    _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+                }
             }
         }
 
