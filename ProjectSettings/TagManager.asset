@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Traps
   - ground
+  - collect
+  - FireBall
   layers:
   - Default
   - TransparentFX
@@ -13,7 +15,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Ground
   - 
   - 
   - 
