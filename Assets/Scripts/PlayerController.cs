@@ -163,6 +163,15 @@ namespace MyPlayerController
             {
                 _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
             }
+
+            if (_frameVelocity.x > 0)
+            {
+                _rb.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                _rb.GetComponent<SpriteRenderer>().flipX = false;
+            }
         }
 
         #endregion
