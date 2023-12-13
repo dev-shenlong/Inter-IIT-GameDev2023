@@ -8,6 +8,8 @@ TagManager:
   - ground
   - collect
   - FireBall
+  - collect2
+  - collect3
   layers:
   - Default
   - TransparentFX

@@ -10,8 +10,25 @@ public class itemcollectable : MonoBehaviour
         if(collision.gameObject.CompareTag("collect"))
         {
             Destroy(collision.gameObject);
-            collectItem += 10;
-            Debug.Log("score" + collectItem);
+            collectItem += 30;
+            Debug.Log("score: " + collectItem);
         }
+
+
+       else if (collision.gameObject.CompareTag("collect2"))
+        {
+            Destroy(collision.gameObject);
+            collectItem += 60;
+            Debug.Log("score: " + collectItem);
+        }
+
+        else if (collision.gameObject.CompareTag("collect3"))
+        {
+            Destroy(collision.gameObject);
+            collectItem +=100;
+            Debug.Log("score: " + collectItem);
+        }
+
+
     }
 }
