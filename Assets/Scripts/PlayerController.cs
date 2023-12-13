@@ -168,7 +168,7 @@ namespace MyPlayerController
             {
                 _rb.GetComponent<SpriteRenderer>().flipX = true;
             }
-            else
+            if (_frameVelocity.x < 0)
             {
                 _rb.GetComponent<SpriteRenderer>().flipX = false;
             }
