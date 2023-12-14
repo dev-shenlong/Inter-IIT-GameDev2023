@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4152de9bb5a4d774f86955a579c119ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 11400000, guid: c42ba07ca51029e4b912edd23ec44738, type: 2}
-  reverseGravity: 1
+  _stats: {fileID: 11400000, guid: 17fb6a7277672e64f9787777fd150aeb, type: 2}
+  reverseGravity: 0
 --- !u!70 &6975459093825561918
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

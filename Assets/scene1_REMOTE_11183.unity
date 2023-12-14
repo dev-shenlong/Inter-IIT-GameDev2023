@@ -5707,6 +5707,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6975459093825561910, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
       propertyPath: fireballs.Array.data[0]
       value: 

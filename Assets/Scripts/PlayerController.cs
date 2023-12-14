@@ -15,6 +15,10 @@ namespace MyPlayerController
 
         public bool reverseGravity;
 
+        private float horizontalRG;
+        public float speedRG = 14f;
+        public float jumpingPowerRG = 20f;
+
         #region Interface
 
         public Vector2 FrameInput => _frameInput.Move;
@@ -37,6 +41,16 @@ namespace MyPlayerController
         {
             _time += Time.deltaTime;
             GatherInput();
+
+            if (reverseGravity)
+            {
+                horizontalRG = Input.GetAxisRaw("Horizontal");
+
+                if (Input.GetButtonDown("Jump") && IsGrounded())
+                {
+                    _rb.velocity = new Vector2(_rb.velocity.x, -jumpingPowerRG);
+                }
+            }
         }
 
         private void GatherInput()
@@ -65,7 +79,7 @@ namespace MyPlayerController
         {   
             if (reverseGravity)
             {
-                _rb.gravityScale = -30;
+                _rb.gravityScale = -10;
             } 
             else
             {
@@ -79,16 +93,13 @@ namespace MyPlayerController
                 HandleJump();
                 HandleDirection();
                 HandleGravity();
+                HandleDirection();
+
+                ApplyMovement();
             } else
             {
-                HandleJumpRG();
-                HandleDirection();
-                HandleReverseGravity();
+                HandleMovementRG();
             }
-
-            Debug.Log("fv : " + _frameVelocity);
-            Debug.Log("rv : " + _rb.velocity);
-            ApplyMovement();
         }
 
         #region Collisions
@@ -103,8 +114,6 @@ namespace MyPlayerController
             // Ground and Ceiling
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
             bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
-
-            (groundHit, ceilingHit) = (ceilingHit, groundHit);
 
             ///Debug.Log("gh : "+ groundHit);
             //Debug.Log("ch : "+ ceilingHit);
@@ -148,15 +157,7 @@ namespace MyPlayerController
 
         private void HandleJump()
         {
-            if (reverseGravity)
-            {
-                if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y < 0) _endedJumpEarly = true;
-
-            } else
-            {
-                if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
-
-            }
+            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
@@ -165,16 +166,6 @@ namespace MyPlayerController
             _jumpToConsume = false;
         }
 
-        private void HandleJumpRG()
-        {
-            bool grounded = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
-
-            if (!_jumpToConsume && !HasBufferedJump) return;
-
-            if (_grounded || CanUseCoyote) ExecuteJump();
-
-            _jumpToConsume = false;
-        }
 
         private void ExecuteJump()
         {
@@ -220,36 +211,37 @@ namespace MyPlayerController
 
         private void HandleGravity()
         {
-            if (reverseGravity)
+
+            if (_grounded && _frameVelocity.y <= 0f)
             {
-                if (_grounded && _frameVelocity.y >= 0f)
-                {
-                    _frameVelocity.y = -(_stats.GroundingForce);
-                }
-                else
-                {
-                   // var inAirGravity = _stats.FallAcceleration;
-                    //if (_endedJumpEarly && _frameVelocity.y < 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
-                    //_frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, _stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
-                }
-            } else
+                _frameVelocity.y = _stats.GroundingForce;
+            }
+            else
             {
-                if (_grounded && _frameVelocity.y <= 0f)
-                {
-                    _frameVelocity.y = _stats.GroundingForce;
-                }
-                else
-                {
-                    var inAirGravity = _stats.FallAcceleration;
-                    if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
-                    _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
-                }
+                var inAirGravity = _stats.FallAcceleration;
+                if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
+                _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
             }
 
-        } 
-        private void HandleReverseGravity()
-        {
+        }
 
+        private void HandleMovementRG()
+        {
+            _rb.velocity = new Vector2(horizontalRG * speedRG, _rb.velocity.y);
+
+            if (_rb.velocity.x > 0)
+            {
+                _rb.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            if (_rb.velocity.x < 0)
+            {
+                _rb.GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+
+        private bool IsGrounded()
+        {
+            return Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
         }
 
         #endregion
