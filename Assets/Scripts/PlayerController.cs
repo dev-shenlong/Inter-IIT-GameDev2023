@@ -20,6 +20,8 @@ namespace MyPlayerController
         public float speedRG = 14f;
         public float jumpingPowerRG = 20f;
 
+        private bool isFacingRight = false;
+
         #region Interface
 
         public Vector2 FrameInput => _frameInput.Move;
@@ -57,6 +59,8 @@ namespace MyPlayerController
                     _rb.velocity = new Vector2(_rb.velocity.x, -jumpingPowerRG);
                 }
             }
+
+            FlipPlayer();
         }
 
         private void GatherInput()
@@ -200,16 +204,6 @@ namespace MyPlayerController
                 _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
             }
 
-
-            // Flip the player in which they are moving
-            if (_frameVelocity.x > 0)
-            {
-                _rb.GetComponent<SpriteRenderer>().flipX = true;
-            }
-            if (_frameVelocity.x < 0)
-            {
-                _rb.GetComponent<SpriteRenderer>().flipX = false;
-            }
         }
 
         #endregion
@@ -235,15 +229,6 @@ namespace MyPlayerController
         private void HandleMovementRG()
         {
             _rb.velocity = new Vector2(horizontalRG * speedRG, _rb.velocity.y);
-
-            if (_rb.velocity.x > 0)
-            {
-                _rb.GetComponent<SpriteRenderer>().flipX = true;
-            }
-            if (_rb.velocity.x < 0)
-            {
-                _rb.GetComponent<SpriteRenderer>().flipX = false;
-            }
         }
 
         private bool IsGrounded()
@@ -256,6 +241,32 @@ namespace MyPlayerController
             reverseGravity = !reverseGravity;
         }
 
+        private void FlipPlayer()
+        {
+            if (reverseGravity)
+            {
+                if (isFacingRight && horizontalRG < 0 || !isFacingRight & horizontalRG > 0)
+                {
+                    isFacingRight = !isFacingRight;
+                    Vector3 localScale = transform.localScale;
+                    localScale.x *= -1;
+                    transform.localScale = localScale;
+                }
+            } else
+            {
+                if (isFacingRight && _frameVelocity.x < 0 || !isFacingRight & _frameVelocity.x > 0)
+                {
+                    Debug.Log("we here");
+                    isFacingRight = !isFacingRight;
+                    Vector3 localScale = transform.localScale;
+                    Debug.Log("before " + localScale);
+                    localScale.x *= -1;
+                    Debug.Log("after " + localScale);
+                    transform.localScale = localScale;
+                    Debug.Log("very after " + transform.localScale);
+                }
+            }
+        }
         #endregion
 
         private void ApplyMovement() => _rb.velocity = _frameVelocity;
