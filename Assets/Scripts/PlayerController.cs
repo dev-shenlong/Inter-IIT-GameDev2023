@@ -97,7 +97,7 @@ namespace MyPlayerController
             }
             else
             {
-                _rb.gravityScale = 1;
+                _rb.gravityScale = 20;
             }
 
             if (!reverseGravity)

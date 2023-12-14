@@ -208,7 +208,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   reverseGravity: 0
-  reverseGravityPower: -10
+  reverseGravityPower: -7
   speedRG: 14
   jumpingPowerRG: 20
 --- !u!70 &6975459093825561918
