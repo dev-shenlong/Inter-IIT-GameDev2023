@@ -5661,7 +5661,7 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: 17dd5a316c13ec943bf90c9ed68137aa, type: 2}
     - target: {fileID: 6975459093825561905, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
       propertyPath: reverseGravity
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6975459093825561908, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
       propertyPath: m_RootOrder

@@ -42,6 +42,11 @@ namespace MyPlayerController
             _time += Time.deltaTime;
             GatherInput();
 
+            if (Input.GetButtonDown("SwitchGrav"))
+            {
+                reverseGravity = !reverseGravity;
+            }
+
             if (reverseGravity)
             {
                 horizontalRG = Input.GetAxisRaw("Horizontal");
