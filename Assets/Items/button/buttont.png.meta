@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a9181740875f49278c4a1086796c8f1
+guid: 230c1d6556e2a0b8ead0d601dfc4f658
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Laser-Shooter_0
+      name: buttont_0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 2
-        width: 10
-        height: 12
+        x: 5
+        y: 5
+        width: 32
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc133160a100350489d991663c16ab8f
-      internalID: -1817648064
+      spriteID: 21ffc73c5b4b3b8b696d011fdab5d1f7
+      internalID: 1794814764
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laser-Shooter_1
+      name: buttont_1
       rect:
         serializedVersion: 2
-        x: 117
-        y: 2
-        width: 11
-        height: 12
+        x: 47
+        y: 5
+        width: 32
+        height: 7
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +140,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a054df34ea18d41429c8cc9a242ed291
-      internalID: -1863142252
+      spriteID: 33fbdbb5deebe8e7c817f5909338a0c9
+      internalID: -1967471329
       vertices: []
       indices: 
       edges: []
@@ -157,8 +157,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Laser-Shooter_0: -1817648064
-      Laser-Shooter_1: -1863142252
+      buttont_0: 1794814764
+      buttont_1: -1967471329
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
