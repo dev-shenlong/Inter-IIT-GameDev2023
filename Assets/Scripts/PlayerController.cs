@@ -18,9 +18,9 @@ namespace MyPlayerController
         public bool reverseGravity;
 
         private float horizontalRG;
-        public float reverseGravityPower = -10;
+        public float reverseGravityPower = -5;
         public float speedRG = 14f;
-        public float jumpingPowerRG = 20f;
+        public float jumpingPowerRG = 10f;
 
         private bool isFacingRight = false;
 
@@ -44,13 +44,15 @@ namespace MyPlayerController
 
         private void Update()
         {
+            checkGravity();
+
             _time += Time.deltaTime;
             GatherInput();
 
-            if (Input.GetButtonDown("SwitchGrav"))
-            {
-                switchGravity();
-            }
+            //if (Input.GetButtonDown("SwitchGrav"))
+            //{
+            //    switchGravity();
+            //}
 
             if (reverseGravity)
             {
@@ -60,8 +62,6 @@ namespace MyPlayerController
                 {
                     _rb.velocity = new Vector2(_rb.velocity.x, -jumpingPowerRG);
                 }
-
-                Debug.Log(IsGrounded());
             }
 
             FlipPlayer();
@@ -237,9 +237,18 @@ namespace MyPlayerController
             return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);            
         }
 
-        public void switchGravity()
-        {
-            reverseGravity = !reverseGravity;
+        public void switchGravity(int normal = 2)
+        {   
+            if (normal == 0)
+            {
+                reverseGravity = false;
+            }else if (normal == 1)
+            {
+                reverseGravity = true;
+            } else
+            {
+                reverseGravity = !reverseGravity;
+            }
         }
 
         private void FlipPlayer()
@@ -262,6 +271,41 @@ namespace MyPlayerController
                     localScale.x *= -1;
                     transform.localScale = localScale;
                 }
+            }
+        }
+
+        private void checkGravity()
+        {
+            if (transform.localPosition.y < 3)
+            {
+                switchGravity(0);
+            }
+            else if (transform.localPosition.y > 3 && transform.localPosition.y < 8)
+            {
+                switchGravity(1);
+            } else if (transform.localPosition.y >= 8 && transform.localPosition.y < 13)
+            {
+                switchGravity(0);
+            }
+            else if (transform.localPosition.y > 13 && transform.localPosition.y < 19)
+            {
+                switchGravity(1);
+            }
+            else if (transform.localPosition.y > 19 && transform.localPosition.y < 23)
+            {
+                switchGravity(0);
+            }
+            else if (transform.localPosition.y > 23 && transform.localPosition.y < 28)
+            {
+                switchGravity(1);
+            }
+            else if (transform.localPosition.y > 28 && transform.localPosition.y < 33)
+            {
+                switchGravity(0);
+            }
+            else if (transform.localPosition.y > 33 && transform.localPosition.y < 38)
+            {
+                switchGravity(1);
             }
         }
         #endregion
