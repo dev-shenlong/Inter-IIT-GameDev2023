@@ -3850,6 +3850,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1374079115}
     m_Modifications:
+    - target: {fileID: 1169979270046899556, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 6975459093825561896, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -43748,7 +43752,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1801785505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.33, y: 3, z: 0}
+  m_LocalPosition: {x: -3.96, y: 18.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
