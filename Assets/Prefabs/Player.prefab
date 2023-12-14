@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 6975459093825561916}
   - component: {fileID: 6975459093825561917}
   - component: {fileID: 6975459093825561914}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -43,6 +43,7 @@ Transform:
   - {fileID: 6975459094796772809}
   - {fileID: 6975459095267439059}
   - {fileID: 6174953229279390754}
+  - {fileID: 7867583782165567781}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,6 +203,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 17fb6a7277672e64f9787777fd150aeb, type: 2}
+  groundCheck: {fileID: 7867583782165567781}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
   reverseGravity: 0
   reverseGravityPower: -10
   speedRG: 14
@@ -305,7 +310,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6975459094796772809}
   - component: {fileID: 6975459094796772822}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -415,7 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6975459095267439059}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShootPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7148428337604731935, guid: 0000000000000000d000000000000000, type: 0}
@@ -437,6 +442,37 @@ Transform:
   m_Father: {fileID: 6975459093825561908}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8588489971877462568
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7867583782165567781}
+  m_Layer: 7
+  m_Name: Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7867583782165567781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8588489971877462568}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.47, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6975459093825561908}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9216956473252123083
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,7 +483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6174953229279390754}
   - component: {fileID: 5849793664192874495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Trail Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -7,6 +7,8 @@ namespace MyPlayerController
     public class PlayerController : MonoBehaviour, IPlayerController
     {
         [SerializeField] private ScriptableStats _stats;
+        [SerializeField] private Transform groundCheck;
+        [SerializeField] private LayerMask groundLayer;
         private Rigidbody2D _rb;
         private CapsuleCollider2D _col;
         private FrameInput _frameInput;
@@ -58,6 +60,8 @@ namespace MyPlayerController
                 {
                     _rb.velocity = new Vector2(_rb.velocity.x, -jumpingPowerRG);
                 }
+
+                Debug.Log(IsGrounded());
             }
 
             FlipPlayer();
@@ -125,9 +129,6 @@ namespace MyPlayerController
             // Ground and Ceiling
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
             bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
-
-            ///Debug.Log("gh : "+ groundHit);
-            //Debug.Log("ch : "+ ceilingHit);
 
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Max(0, _frameVelocity.y);
@@ -233,7 +234,7 @@ namespace MyPlayerController
 
         private bool IsGrounded()
         {
-            return Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+            return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);            
         }
 
         public void switchGravity()
@@ -256,14 +257,10 @@ namespace MyPlayerController
             {
                 if (isFacingRight && _frameVelocity.x < 0 || !isFacingRight & _frameVelocity.x > 0)
                 {
-                    Debug.Log("we here");
                     isFacingRight = !isFacingRight;
                     Vector3 localScale = transform.localScale;
-                    Debug.Log("before " + localScale);
                     localScale.x *= -1;
-                    Debug.Log("after " + localScale);
                     transform.localScale = localScale;
-                    Debug.Log("very after " + transform.localScale);
                 }
             }
         }
