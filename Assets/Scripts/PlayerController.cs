@@ -65,18 +65,29 @@ namespace MyPlayerController
         {   
             if (reverseGravity)
             {
-                _rb.gravityScale = -1;
+                _rb.gravityScale = -30;
             } 
             else
             {
                 _rb.gravityScale = 1;
             }
-            CheckCollisions();
 
-            HandleJump();
-            HandleDirection();
-            HandleGravity();
+            if (!reverseGravity)
+            {
+                CheckCollisions();
 
+                HandleJump();
+                HandleDirection();
+                HandleGravity();
+            } else
+            {
+                HandleJumpRG();
+                HandleDirection();
+                HandleReverseGravity();
+            }
+
+            Debug.Log("fv : " + _frameVelocity);
+            Debug.Log("rv : " + _rb.velocity);
             ApplyMovement();
         }
 
@@ -95,8 +106,8 @@ namespace MyPlayerController
 
             (groundHit, ceilingHit) = (ceilingHit, groundHit);
 
-            Debug.Log("gh : "+ groundHit);
-            Debug.Log("ch : "+ ceilingHit);
+            ///Debug.Log("gh : "+ groundHit);
+            //Debug.Log("ch : "+ ceilingHit);
 
             // Hit a Ceiling
             if (ceilingHit) _frameVelocity.y = Mathf.Max(0, _frameVelocity.y);
@@ -137,7 +148,26 @@ namespace MyPlayerController
 
         private void HandleJump()
         {
-            if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
+            if (reverseGravity)
+            {
+                if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y < 0) _endedJumpEarly = true;
+
+            } else
+            {
+                if (!_endedJumpEarly && !_grounded && !_frameInput.JumpHeld && _rb.velocity.y > 0) _endedJumpEarly = true;
+
+            }
+
+            if (!_jumpToConsume && !HasBufferedJump) return;
+
+            if (_grounded || CanUseCoyote) ExecuteJump();
+
+            _jumpToConsume = false;
+        }
+
+        private void HandleJumpRG()
+        {
+            bool grounded = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
             if (!_jumpToConsume && !HasBufferedJump) return;
 
@@ -172,6 +202,8 @@ namespace MyPlayerController
                 _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
             }
 
+
+            // Flip the player in which they are moving
             if (_frameVelocity.x > 0)
             {
                 _rb.GetComponent<SpriteRenderer>().flipX = true;
@@ -190,7 +222,16 @@ namespace MyPlayerController
         {
             if (reverseGravity)
             {
-                return;
+                if (_grounded && _frameVelocity.y >= 0f)
+                {
+                    _frameVelocity.y = -(_stats.GroundingForce);
+                }
+                else
+                {
+                   // var inAirGravity = _stats.FallAcceleration;
+                    //if (_endedJumpEarly && _frameVelocity.y < 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
+                    //_frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, _stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
+                }
             } else
             {
                 if (_grounded && _frameVelocity.y <= 0f)
@@ -204,6 +245,11 @@ namespace MyPlayerController
                     _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
                 }
             }
+
+        } 
+        private void HandleReverseGravity()
+        {
+
         }
 
         #endregion
