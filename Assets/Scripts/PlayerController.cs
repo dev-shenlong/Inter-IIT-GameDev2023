@@ -3,13 +3,6 @@ using UnityEngine;
 
 namespace MyPlayerController
 {
-    /// <summary>
-    /// Hey!
-    /// Tarodev here. I built this controller as there was a severe lack of quality & free 2D controllers out there.
-    /// I have a premium version on Patreon, which has every feature you'd expect from a polished controller. Link: https://www.patreon.com/tarodev
-    /// You can play and compete for best times here: https://tarodev.itch.io/extended-ultimate-2d-controller
-    /// If you hve any questions or would like to brag about your score, come to discord: https://discord.gg/tarodev
-    /// </summary>
     [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D))]
     public class PlayerController : MonoBehaviour, IPlayerController
     {
@@ -19,6 +12,13 @@ namespace MyPlayerController
         private FrameInput _frameInput;
         private Vector2 _frameVelocity;
         private bool _cachedQueryStartInColliders;
+
+        public bool reverseGravity;
+
+        private float horizontalRG;
+        public float reverseGravityPower = -10;
+        public float speedRG = 14f;
+        public float jumpingPowerRG = 20f;
 
         #region Interface
 
@@ -42,6 +42,21 @@ namespace MyPlayerController
         {
             _time += Time.deltaTime;
             GatherInput();
+
+            if (Input.GetButtonDown("SwitchGrav"))
+            {
+                switchGravity();
+            }
+
+            if (reverseGravity)
+            {
+                horizontalRG = Input.GetAxisRaw("Horizontal");
+
+                if (Input.GetButtonDown("Jump") && IsGrounded())
+                {
+                    _rb.velocity = new Vector2(_rb.velocity.x, -jumpingPowerRG);
+                }
+            }
         }
 
         private void GatherInput()
@@ -68,13 +83,30 @@ namespace MyPlayerController
 
         private void FixedUpdate()
         {
-            CheckCollisions();
+            if (reverseGravity)
+            {
+                _rb.gravityScale = reverseGravityPower;
+            }
+            else
+            {
+                _rb.gravityScale = 1;
+            }
 
-            HandleJump();
-            HandleDirection();
-            HandleGravity();
+            if (!reverseGravity)
+            {
+                CheckCollisions();
 
-            ApplyMovement();
+                HandleJump();
+                HandleDirection();
+                HandleGravity();
+                HandleDirection();
+
+                ApplyMovement();
+            }
+            else
+            {
+                HandleMovementRG();
+            }
         }
 
         #region Collisions
@@ -90,8 +122,11 @@ namespace MyPlayerController
             bool groundHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.down, _stats.GrounderDistance, ~_stats.PlayerLayer);
             bool ceilingHit = Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
 
+            ///Debug.Log("gh : "+ groundHit);
+            //Debug.Log("ch : "+ ceilingHit);
+
             // Hit a Ceiling
-            if (ceilingHit) _frameVelocity.y = Mathf.Min(0, _frameVelocity.y);
+            if (ceilingHit) _frameVelocity.y = Mathf.Max(0, _frameVelocity.y);
 
             // Landed on the Ground
             if (!_grounded && groundHit)
@@ -138,6 +173,7 @@ namespace MyPlayerController
             _jumpToConsume = false;
         }
 
+
         private void ExecuteJump()
         {
             _endedJumpEarly = false;
@@ -164,6 +200,8 @@ namespace MyPlayerController
                 _frameVelocity.x = Mathf.MoveTowards(_frameVelocity.x, _frameInput.Move.x * _stats.MaxSpeed, _stats.Acceleration * Time.fixedDeltaTime);
             }
 
+
+            // Flip the player in which they are moving
             if (_frameVelocity.x > 0)
             {
                 _rb.GetComponent<SpriteRenderer>().flipX = true;
@@ -180,6 +218,7 @@ namespace MyPlayerController
 
         private void HandleGravity()
         {
+
             if (_grounded && _frameVelocity.y <= 0f)
             {
                 _frameVelocity.y = _stats.GroundingForce;
@@ -190,6 +229,31 @@ namespace MyPlayerController
                 if (_endedJumpEarly && _frameVelocity.y > 0) inAirGravity *= _stats.JumpEndEarlyGravityModifier;
                 _frameVelocity.y = Mathf.MoveTowards(_frameVelocity.y, -_stats.MaxFallSpeed, inAirGravity * Time.fixedDeltaTime);
             }
+
+        }
+
+        private void HandleMovementRG()
+        {
+            _rb.velocity = new Vector2(horizontalRG * speedRG, _rb.velocity.y);
+
+            if (_rb.velocity.x > 0)
+            {
+                _rb.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            if (_rb.velocity.x < 0)
+            {
+                _rb.GetComponent<SpriteRenderer>().flipX = false;
+            }
+        }
+
+        private bool IsGrounded()
+        {
+            return Physics2D.CapsuleCast(_col.bounds.center, _col.size, _col.direction, 0, Vector2.up, _stats.GrounderDistance, ~_stats.PlayerLayer);
+        }
+
+        public void switchGravity()
+        {
+            reverseGravity = !reverseGravity;
         }
 
         #endregion

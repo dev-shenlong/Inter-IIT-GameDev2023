@@ -1301,7 +1301,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 322218795}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2000003, y: 4.8999996, z: -13.136932}
+  m_LocalPosition: {x: -8, y: 3.9999995, z: -13.136932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3852,7 +3852,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6975459093825561896, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6975459093825561908, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
       propertyPath: m_RootOrder
@@ -4612,6 +4612,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 368307789008457973, guid: d7e907d7810034453b05e07edb4084f4, type: 3}
   m_PrefabInstance: {fileID: 1360798586}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1126811564 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6975459093825561904, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+  m_PrefabInstance: {fileID: 948312916}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f64cba1607d8f40dd95ec614df534ce7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1130977837
 GameObject:
   m_ObjectHideFlags: 0
@@ -5966,7 +5977,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 0}
+  m_Follow: {fileID: 533360580}
   m_Lens:
     FieldOfView: 60
     OrthographicSize: 5
@@ -5993,7 +6004,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299966691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.2000003, y: 4.8999996, z: -13.136932}
+  m_LocalPosition: {x: -8, y: 3.9999995, z: -13.136932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44180,7 +44191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5f56fcda53c485ea6ec1b5e7d8e441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerHealth: {fileID: 0}
+  PlayerHealth: {fileID: 1126811564}
   totalHealthBar: {fileID: 532810417}
   currentHealthBar: {fileID: 1907047927}
 --- !u!1 &2029011533
