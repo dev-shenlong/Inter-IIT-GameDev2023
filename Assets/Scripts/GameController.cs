@@ -12,8 +12,15 @@ public class GameController : MonoBehaviour
         // Check if the collision object is not null and has the "Traps" tag
         if (collision != null && collision.CompareTag("Traps"))
         {
-            PlayerHealth.TakeDamage(damage);
+            StartCoroutine(ApplyDamageWithDelay());
         }
+    }
+
+    private IEnumerator ApplyDamageWithDelay()
+    {
+        PlayerHealth.TakeDamage(damage);
+        yield return new WaitForSeconds(1f);
+        // Additional code to execute after the delay
     }
 }
 

@@ -3898,6 +3898,90 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[0]
+      value: 
+      objectReference: {fileID: 1433078165}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[1]
+      value: 
+      objectReference: {fileID: 486941910}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[2]
+      value: 
+      objectReference: {fileID: 2118950178}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[3]
+      value: 
+      objectReference: {fileID: 1015999383}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[4]
+      value: 
+      objectReference: {fileID: 567516563}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[5]
+      value: 
+      objectReference: {fileID: 1137975218}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[6]
+      value: 
+      objectReference: {fileID: 348838229}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[7]
+      value: 
+      objectReference: {fileID: 533746188}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[8]
+      value: 
+      objectReference: {fileID: 1859364}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[9]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[10]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[11]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[12]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[13]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[14]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[15]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[16]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[17]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[18]
+      value: 
+      objectReference: {fileID: 1667663331}
+    - target: {fileID: 6975459093825561914, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
+      propertyPath: fireballs.Array.data[19]
+      value: 
+      objectReference: {fileID: 1667663331}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b30555d0de7a2d41ad0de9e4056338f, type: 3}
 --- !u!1 &951322325
