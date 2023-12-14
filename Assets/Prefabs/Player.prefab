@@ -202,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stats: {fileID: 11400000, guid: 17fb6a7277672e64f9787777fd150aeb, type: 2}
   reverseGravity: 0
+  reverseGravityPower: -8
   speedRG: 14
   jumpingPowerRG: 20
 --- !u!70 &6975459093825561918

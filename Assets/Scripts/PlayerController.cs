@@ -16,6 +16,7 @@ namespace MyPlayerController
         public bool reverseGravity;
 
         private float horizontalRG;
+        public float reverseGravityPower = -10;
         public float speedRG = 14f;
         public float jumpingPowerRG = 20f;
 
@@ -84,7 +85,7 @@ namespace MyPlayerController
         {   
             if (reverseGravity)
             {
-                _rb.gravityScale = -10;
+                _rb.gravityScale = reverseGravityPower;
             } 
             else
             {
