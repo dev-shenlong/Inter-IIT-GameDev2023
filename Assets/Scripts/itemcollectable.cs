@@ -6,7 +6,7 @@ using TMPro;
 public class itemcollectable : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
-    private int collectItem=0;  //Collected items here(Give point say 10)
+    public int collectItem=0;  //Collected items here(Give point say 10)
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.CompareTag("collect"))
