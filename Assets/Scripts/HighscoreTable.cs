@@ -121,13 +121,13 @@ public class HighscoreTable : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    private class Highscores
+    public class Highscores
     {
         public List<HighscoreEntry> highscoreEntryList;
     }
 
     [System.Serializable]
-    private class HighscoreEntry {
+    public class HighscoreEntry {
 
         public int score;
         public string name;
