@@ -5,6 +5,7 @@ using UnityEngine;
 public class  Health : MonoBehaviour
 {
     [SerializeField] private float StartingHealth;
+    [SerializeField] private GameObject gameOverMenu;
     public float currentHealth { get; private set; }
     private bool dead;
     
@@ -31,10 +32,12 @@ public class  Health : MonoBehaviour
         {
             if(!dead)
             {
-            GetComponent<Playermovement>().enabled = false;
+                //GetComponent<Playermovement>().enabled = false;
                 //Player is dead
                 dead = true;
 
+                Time.timeScale = 0f;
+                gameOverMenu.SetActive(true);
             }
         }
 
