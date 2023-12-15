@@ -19,7 +19,7 @@ public class GameController : MonoBehaviour
     private IEnumerator ApplyDamageWithDelay()
     {
         PlayerHealth.TakeDamage(damage);
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         // Additional code to execute after the delay
     }
 }
