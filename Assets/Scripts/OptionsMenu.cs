@@ -9,7 +9,9 @@ using TMPro;
 public class OptionsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
-    public TMP_Dropdown resolutionDropdown; 
+    public TMP_Dropdown resolutionDropdown;
+
+    public Toggle fullscreenToggle;
 
     Resolution[] resolutions;
 
@@ -37,6 +39,8 @@ public class OptionsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        fullscreenToggle.isOn = Screen.fullScreen;
     }
 
     public void SetResolution (int resolutionIndex)
