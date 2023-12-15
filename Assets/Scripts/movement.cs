@@ -55,9 +55,11 @@ public class movement : MonoBehaviour
     //Check if Grounded
     void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("i");
         if (collision.gameObject.tag == "ground")
         {
             grounded = true;
+            Debug.Log("in");
         }
     }
     void OnTriggerExit2D(Collider2D collision)
