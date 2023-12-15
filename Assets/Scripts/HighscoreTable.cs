@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using  UnityEngine.UI;
+using UnityEngine.UI;
+using System;
 
 public class HighscoreTable : MonoBehaviour
 {   
@@ -48,9 +49,9 @@ public class HighscoreTable : MonoBehaviour
 
         highscoreEntryTransformList = new List<Transform>();
 
-        foreach (HighscoreEntry highscoreEntry in highscores.highscoreEntryList)
+        for(int i = 0; i < Math.Min(highscores.highscoreEntryList.Count, 10); i++)
         {
-            CreateHighscoreEntryTransform(highscoreEntry, entryContainer ,highscoreEntryTransformList);
+            CreateHighscoreEntryTransform(highscores.highscoreEntryList[i], entryContainer ,highscoreEntryTransformList);
         }
 
         /*
