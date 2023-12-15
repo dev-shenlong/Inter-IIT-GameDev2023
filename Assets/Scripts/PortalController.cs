@@ -22,7 +22,7 @@ public class PortalController : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            if(Vector2.Distance(player.transform.position,transform.position)>1f)
+            if(Vector2.Distance(player.transform.position,transform.position)>0.8f)
             {
                 StartCoroutine(PortalIn());
 
