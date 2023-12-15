@@ -11,6 +11,12 @@ public class GameOver : MonoBehaviour
     public TMP_InputField inputfield;
 
     [SerializeField] private itemcollectable itemCollectable;
+    [SerializeField] private TMP_Text scoretext;
+
+    private void Update()
+    {
+        scoretext.text = "SCORE: " + itemCollectable.collectItem;
+    }
 
     public void LoadMenu()
     {
