@@ -8,6 +8,8 @@ public class  Health : MonoBehaviour
     [SerializeField] private GameObject gameOverMenu;
     public float currentHealth { get; private set; }
     private bool dead;
+    [SerializeField] private AudioSource PlayerDamageSoundEffect;
+    [SerializeField] private AudioSource PlayerDeathSoundEffect;
     
 
 
@@ -25,6 +27,7 @@ public class  Health : MonoBehaviour
         if(currentHealth>0)
         {
             //Player is hurt
+            PlayerDamageSoundEffect.Play();
 
         }
         else
@@ -34,6 +37,7 @@ public class  Health : MonoBehaviour
             {
                 //GetComponent<Playermovement>().enabled = false;
                 //Player is dead
+                PlayerDeathSoundEffect.Play();
                 dead = true;
 
                 Time.timeScale = 0f;

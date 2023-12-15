@@ -8,6 +8,7 @@ public class PortalController : MonoBehaviour
     GameObject player;
     Animation anim;
     Rigidbody2D playerrb;
+    [SerializeField] private AudioSource TeleportSoundEffect;
 
     private void Awake()
     {
@@ -36,8 +37,11 @@ public class PortalController : MonoBehaviour
     {
         playerrb.simulated = false;
         anim.Play("portal IN");
+       // TeleportSoundEffect.Play();
         StartCoroutine(MoveinPortal());
         yield return new WaitForSeconds(1f);
+
+        TeleportSoundEffect.Play();
         player.transform.position = Destination.transform.position;
         playerrb.velocity = Vector2.zero;
 
