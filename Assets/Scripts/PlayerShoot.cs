@@ -19,7 +19,7 @@ public class PlayerShoot : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && cooldownTimer > attackCooldown && Ball.canAttack())
+        if (Input.GetKeyDown(KeyCode.E) && cooldownTimer > attackCooldown && Ball.canAttack())
             Attack();
 
         cooldownTimer += Time.deltaTime;

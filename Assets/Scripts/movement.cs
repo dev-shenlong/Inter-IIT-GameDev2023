@@ -25,17 +25,17 @@ public class movement : MonoBehaviour
         {
             if (grounded)
             {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jump);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, GetComponent<Rigidbody2D>().gravityScale*jump);
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.S))
-        {
-            if (grounded)
-            {
-                GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -jump);
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.S))
+        // {
+        //     if (grounded)
+        //     {
+        //         GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, -jump);
+        //     }
+        // }
 
         moveVelocity = 0;
 
