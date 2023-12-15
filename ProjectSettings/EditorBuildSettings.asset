@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/help_scene.unity
     guid: aaff3ac819497ef459b53a8d31f7cf17
+  - enabled: 1
+    path: Assets/options_scene.unity
+    guid: bb11c2b38a1970940a40fe2db1f7165d
   - enabled: 0
     path: Assets/conflict Scene/scene1.unity
     guid: 7ca9907f29b424bedb34efdedf9feb76

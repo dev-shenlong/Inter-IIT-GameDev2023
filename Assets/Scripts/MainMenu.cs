@@ -29,4 +29,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("help_scene");
     }
+
+    public void LoadOptionsMenu()
+    {
+        SceneManager.LoadScene("options_scene");
+    }
 }
