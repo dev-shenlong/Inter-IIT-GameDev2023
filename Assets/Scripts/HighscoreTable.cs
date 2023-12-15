@@ -59,7 +59,7 @@ public class HighscoreTable : MonoBehaviour
 
         highscoreEntryTransformList = new List<Transform>();
 
-        for(int i = 0; i < Math.Min(highscores.highscoreEntryList.Count, 10); i++)
+        for(int i = 0; i < Math.Min(highscores.highscoreEntryList.Count, 9); i++)
         {
             CreateHighscoreEntryTransform(highscores.highscoreEntryList[i], entryContainer ,highscoreEntryTransformList);
         }
