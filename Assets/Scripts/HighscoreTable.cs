@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using TMPro;
 
 public class HighscoreTable : MonoBehaviour
 {   
@@ -74,7 +75,7 @@ public class HighscoreTable : MonoBehaviour
     private void CreateHighscoreEntryTransform(HighscoreEntry entry, Transform container, List<Transform> transformList)
     {
         
-        float templateHeight = 30f;
+        float templateHeight = 40f;
 
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
@@ -101,15 +102,15 @@ public class HighscoreTable : MonoBehaviour
         }
 
 
-        entryTransform.Find("rankText").GetComponent<Text>().text = rankString;
+        entryTransform.Find("rankText").GetComponent<TMP_Text>().text = rankString;
 
         
         int score = entry.score;
 
-        entryTransform.Find("scoreText").GetComponent<Text>().text = score.ToString();
+        entryTransform.Find("scoreText").GetComponent<TMP_Text>().text = score.ToString();
 
         string name = entry.name;
-        entryTransform.Find("nameText").GetComponent<Text>().text = name;
+        entryTransform.Find("nameText").GetComponent<TMP_Text>().text = name;
 
         entryTransform.Find("background").gameObject.SetActive(rank % 2 == 1);
 
